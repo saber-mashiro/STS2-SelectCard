@@ -1,0 +1,11 @@
+{
+  "id": "STS2SelectCard",
+  "name": "Slay the Spire 2 Select Card",
+  "author": "shiro",
+  "description": "### English\nAdds a new \"Add Card\" button to the Settings-Pause menu, allowing you to instantly open a card selection screen for your current character. Choose any unlocked card from your character’s card pool and directly add it to your deck. \nSupports Chinese localization, and uses the game’s native card selection UI for a clean, consistent experience.\n\n### 中文\n在游戏的设置-暂停页面新增「添加卡牌」按钮，点击后可立即为当前角色打开卡牌选择界面。从角色已解锁的卡牌池中任选一张卡牌，并直接加入你的牌组。\n支持中文本地化显示，采用游戏原生卡牌选择界面，体验简洁统一。",
+  "version": "1.0",
+  "has_pck": true,
+  "has_dll": true,
+  "dependencies": [],
+  "affects_gameplay": true
+}
