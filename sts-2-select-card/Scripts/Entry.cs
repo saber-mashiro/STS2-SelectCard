@@ -223,9 +223,28 @@ public partial class Entry
                         : group.First().TitleLocString.GetRawText();
                     return new CardChoice(cardId, displayName, group.First());
                 })
-                .OrderBy(choice => choice.DisplayName, StringComparer.OrdinalIgnoreCase)
+                .OrderBy(choice => GetRaritySortOrder(choice.CanonicalCard.Rarity))
+                .ThenBy(choice => choice.DisplayName, StringComparer.OrdinalIgnoreCase)
                 .ThenBy(choice => choice.Id, StringComparer.OrdinalIgnoreCase)
                 .ToList();
+        }
+
+        private static int GetRaritySortOrder(CardRarity rarity)
+        {
+            return rarity switch
+            {
+                CardRarity.Basic => 0,
+                CardRarity.Common => 1,
+                CardRarity.Uncommon => 2,
+                CardRarity.Rare => 3,
+                CardRarity.Status => 4,
+                CardRarity.Curse => 5,
+                CardRarity.Event => 6,
+                CardRarity.Token => 7,
+                CardRarity.Quest => 8,
+                CardRarity.Ancient => 9,
+                _ => int.MaxValue
+            };
         }
     }
 
